@@ -2,7 +2,7 @@
 import React from "react";
 
 //  React router dom
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 //pages
 import Signup from "./pages/Signup.jsx";
@@ -27,11 +27,11 @@ export default function App() {
         </Link>
       </nav>
 
-      <Routes>
+      <Switch>
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/admin" component={Admin} />
-      </Routes>
+      </Switch>
     </BrowserRouter>
   );
 }
