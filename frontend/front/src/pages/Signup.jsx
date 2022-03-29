@@ -1,11 +1,28 @@
-import React, { Component } from 'react'
+import axios from "axios";
+import {Navigate} from "react-router-dom"
 
-export class Signup extends Component {
-  render() {
+export default function signup () {
+    
+    const history = Navigate()
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:8000/signup" , {
+
+        })
+        .catch((err) =>
+        {
+            console.log(err);
+        })
+        .then((res) => {
+            //
+            //
+            history.push("/login")
+        })
+    }
     return (
-      <div>Signup</div>
+    <div>
+        <input type="text" onChange={onSubmit}/>
+    </div>
     )
-  }
 }
-
-export default Signup
